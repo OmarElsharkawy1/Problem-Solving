@@ -1,0 +1,26 @@
+Approach and Algorithm
+
+    1. Initialize an empty string result to store the longest common prefix.
+
+    2. Sort the list of strings strs in lexicographical order using the sort() method.
+     This ensures that the first and last strings in the sorted list will have the maximum common prefix length.
+
+    3. Assign the first string in the sorted list to the variable first.
+
+    4. Assign the last string in the sorted list to the variable last.
+
+    5. Iterate through the characters of the first string using a for loop and index variable i.
+        - Check if the character at index i in first is equal to the character at index i in last.
+        - If they are equal, append the character to the result string.
+        - If they are not equal, break out of the loop since the common prefix ends at this point.
+
+    6. After the loop completes, check if the result string is empty.
+        - If it is empty, there is no common prefix among the strings, so return an empty string.
+        - If it is not empty, return the result string, which represents the longest common prefix.
+
+Time Complexity Analysis
+
+    The time complexity of the longestCommonPrefix function is determined by the sorting operation, which has a time complexity of O(n log n), where n is the total number of characters in all the strings combined. The subsequent iteration through the characters has a time complexity of O(k), where k is the length of the longest common prefix. Therefore, the overall time complexity can be approximated as O(n log n + k).
+
+Space Complexity Analysis
+    The space complexity of the longestCommonPrefix function is O(1) since the space used is independent of the input size. The additional space used is for the result string, which grows linearly with the length of the longest common prefix but does not depend on the number of strings in the input list.
