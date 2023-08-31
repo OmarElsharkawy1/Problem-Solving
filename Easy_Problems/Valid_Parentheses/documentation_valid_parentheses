@@ -1,0 +1,34 @@
+Documentation: Valid Parentheses
+
+    The isValid function takes a string s as input and determines whether the arrangement of parentheses, curly brackets, and square brackets in the string is valid. The function returns True if the arrangement is valid, and False otherwise.
+
+Parameters
+    s (str): The input string containing parentheses, curly brackets, and square brackets.
+
+Return Value
+
+    bool: A boolean value indicating whether the arrangement of symbols in the string s is valid (True) or not (False).
+
+Approach and Algorithm
+
+    1. Create a dictionary possible_str that maps opening symbols to their corresponding closing symbols.
+
+    2. Initialize an empty list openings to store the opening symbols encountered.
+
+    3. Check if the length of the input string s is odd. If it is, return False since a valid arrangement cannot have an odd number 
+    of symbols.
+
+    4. Iterate through each character symbol in the input string s.
+        - If symbol is an opening symbol (exists as a key in possible_str), add it to the openings list.
+        - If symbol is a closing symbol:
+            - Check if the openings list is empty or if symbol does not match the expected closing symbol for the last opening symbol encountered. If either condition is true, return False since the arrangement is invalid.
+            - Otherwise, remove the last opening symbol from the openings list using pop().
+            After iterating through all the characters in s, check if the openings list is empty. If it is, return True indicating a valid arrangement. Otherwise, return False.
+
+Time Complexity Analysis
+
+    The time complexity of the isValid function is O(n), where n is the length of the input string s. This is because the function iterates through each character in s once and performs constant-time operations for each character.
+
+Space Complexity Analysis
+
+    The space complexity of the isValid function is O(n), where n is the length of the input string s. This is because the function utilizes a list openings that can potentially store up to half of the characters in s if they are all opening symbols. The space used is proportional to the maximum number of opening symbols encountered before encountering their corresponding closing symbols.
