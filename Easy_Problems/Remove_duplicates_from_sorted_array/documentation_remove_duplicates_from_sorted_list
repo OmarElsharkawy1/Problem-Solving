@@ -1,0 +1,33 @@
+Remove Duplicates from Sorted Array
+
+    The removeDuplicates function takes a sorted list of integers nums as input and removes any duplicates, modifying the list in-place. The function returns the length of the resulting array with unique elements.
+
+Parameters
+
+    self: The reference to the current instance of the class (implicit parameter).
+    nums (List[int]): A sorted list of integers with possible duplicates.
+
+Return Value
+
+    int: The length of the resulting array with unique elements.
+
+Approach and Algorithm
+
+    1. Initialize uniquePointer to 1, representing the index of the first unique element in the modified list.
+
+    2. Iterate over the elements of nums starting from index 1
+        - If the current element nums[i] is different from the previous unique element nums[uniquePointer - 1], it means nums[i] is a new unique element.
+            - Move nums[i] to the next unique position in the modifiedlist by assigning it to nums[uniquePointer].
+            - Increment uniquePointer by 1 to point to the next unique position in nums.
+    
+    3. After iterating through all elements, uniquePointer represents the length of the resulting array with unique elements.
+
+    4. Return uniquePointer as the result.
+
+Time Complexity Analysis
+
+    The time complexity of the removeDuplicates function is O(n), where n is the length of the input list nums. This is because the function iterates through each element of nums once.
+
+Space Complexity Analysis
+
+    The removeDuplicates function modifies the input list nums in-place, without using any additional data structures. Hence, the space complexity is O(1), indicating constant space usage regardless of the size of nums.
