@@ -1,0 +1,19 @@
+Approach and Algorithm:
+
+1. Initialize a variable `k` to keep track of the index for inserting non-`val` elements.
+
+2. Iterate through the list `nums` using a for loop and index variable `i`.
+   - Check if the element at index `i` in `nums` is not equal to `val`.
+   - If the elements are not equal, assign the element at index `i` to `nums[k]` and increment `k` by 1.
+
+3. After iterating through the entire list, the value of `k` represents the length of the modified list.
+
+4. Return the value of `k`, which represents the length of the modified list.
+
+Time Complexity Analysis:
+
+The time complexity of the `removeElement` function is O(n), where n is the length of the input list `nums`. This is because the function iterates through the list once to check for `val` and perform the necessary assignments.
+
+Space Complexity Analysis:
+
+The space complexity of the `removeElement` function is O(1) since the space used is independent of the input size. The function operates directly on the input list `nums` without using any additional data structures.
