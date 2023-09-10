@@ -1,0 +1,22 @@
+Approach and Algorithm:
+
+1. Initialize two pointers, `l` and `r`, to track the leftmost and rightmost indices of the search range. Set `l` to 0 and `r` to `len(nums) - 1`.
+
+2. Enter a while loop that continues until `l` is greater than `r`, indicating that the search range is empty.
+
+3. Calculate the middle index `mid` as the floor division of the sum of `l` and `r` by 2.
+
+4. Compare the target value with the element at index `mid` in the `nums` list.
+   - If the target is equal to the element at `mid`, return `mid` as the index where the target is found.
+   - If the target is greater than the element at `mid`, update `l` to `mid + 1` to search the right half of the remaining range.
+   - If the target is less than the element at `mid`, update `r` to `mid - 1` to search the left half of the remaining range.
+
+5. If the while loop completes without finding the target, it means the target is not present in the list. In this case, return `l` as the index where the target should be inserted.
+
+Time Complexity Analysis:
+
+The time complexity of the `searchInsert` function is O(log n), where n is the length of the input list `nums`. This is because the function performs a binary search, repeatedly dividing the search range in half until the target is found or the search range is empty.
+
+Space Complexity Analysis:
+
+The space complexity of the `searchInsert` function is O(1) since the space used is independent of the input size. The function only uses a constant amount of additional memory to store the pointers `l`, `r`, and `mid`.
