@@ -1,0 +1,38 @@
+Function: addBinary(a, b)
+
+Description:
+    This function takes two binary strings 'a' and 'b' as input and returns their sum as a binary string. 
+    It performs the addition by iterating over the digits of the input strings from right to left. 
+    It keeps track of the carry while adding the digits and builds the result string accordingly.
+
+Parameters:
+    a (str): Binary string representing the first operand.
+    b (str): Binary string representing the second operand.
+
+Returns:
+    str: The binary string representing the sum of 'a' and 'b'.
+
+Approach and Algorithm:
+
+   1. Initialize an empty string 'res' to store the result.
+   2. Initialize a carry variable to 0.
+   3. Reverse both input strings 'a' and 'b'.
+   4. Iterate over the digits of the longer string from right to left using the range function.
+   5. At each iteration:
+    a. Get the current digits 'digitA' and 'digitB' of 'a' and 'b' respectively. 
+        If the index exceeds the length of the string, set the digit to 0.
+    b. Calculate the sum of the digits 'digitA', 'digitB', and the carry.
+    c. Calculate the value of the current digit in the result string by taking the modulus of the sum with 2.
+    d. Append the character representation of the calculated digit to the left side of the result string 'res'.
+    e. Update the carry by taking the floor division of the sum by 2.
+   6. If there is a remaining carry, append '1' to the left side of the result string.
+   7. Return the result string.
+
+Time Complexity Analysis:
+    The time complexity of this function is 
+    O(max(len(a), len(b))), where len(a) and len(b) are the lengths of the input strings 'a' and 'b'. 
+    The function iterates over the digits of the longer string once.
+
+Space Complexity Analysis:
+    The space complexity of this function is O(max(len(a), len(b))), 
+    as the size of the result string 'res' depends on the length of the longer input string.
