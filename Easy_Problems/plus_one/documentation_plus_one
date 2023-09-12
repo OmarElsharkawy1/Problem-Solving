@@ -1,0 +1,27 @@
+Function: plusOne(digits)
+
+Description:
+    This function takes a list of digits representing a non-negative integer and adds one to it. It performs the addition by iterating over the digits in reverse order, starting from the least significant digit. If a digit is 9, it changes it to 0 and moves to the next digit. If a digit is not 9, it increments it by 1 and returns the updated list. If all digits were 9, it adds a new leading 1 to the list.
+
+Parameters:
+
+    digits (list): A list of digits representing a non-negative integer.
+
+Returns:
+
+    list: The updated list of digits after adding one.
+
+Approach and Algorithm:
+
+    Iterate over the digits in reverse order from the least significant digit to the most significant digit.
+    If a digit is 9, change it to 0 and move to the next digit.
+    If a digit is not 9, increment it by 1 and return the updated list.
+    If all digits were 9, add a new leading 1 to the list.
+
+Time Complexity Analysis:
+
+    The time complexity of this function is O(n), where n is the number of digits in the input list. This is because we iterate over the digits once in reverse order.
+
+Space Complexity Analysis:
+
+    The space complexity of this function is O(1) since it uses a constant amount of additional space, regardless of the input size.
