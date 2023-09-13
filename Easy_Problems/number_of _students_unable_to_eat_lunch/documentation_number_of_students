@@ -1,0 +1,26 @@
+## Description:
+This function simulates the process of serving sandwiches to students in a circular queue. It iteratively checks whether each student at the front of the line wants the sandwich at the front of the stack. If a student wants the sandwich, they are removed from the line along with the sandwich. If not, the student is moved to the end of the line. The process continues until one of the stopping conditions is met: either all students have been served a sandwich (the line is empty), or the remaining sandwich is not wanted by any student (impossible to serve). The function returns the count of unserved students (students still in line) after this process.
+
+## Parameters:
+- `students` (list of int): A list representing the students in the queue. Each element is an integer (0 or 1), where 1 represents a student who wants a sandwich, and 0 represents a student who does not want a sandwich.
+- `sandwiches` (list of int): A list representing the sandwiches to be served. Each element is an integer (0 or 1), where 1 represents a sandwich that can be served, and 0 represents a sandwich that cannot be served.
+
+## Returns:
+- `int`: The count of unserved students (students still in line) after attempting to serve sandwiches.
+
+## Algorithm:
+1. Initialize an infinite loop to simulate the serving process until a stopping condition is met.
+2. Check if the student at the front of the line (`students[0]`) wants the sandwich at the front of the stack (`sandwiches[0]`).
+   - If they do, remove the student and the sandwich from their respective lists.
+   - If not, move the student to the end of the line by appending them to the end and removing them from the front.
+3. Check if all students have been served a sandwich (the line is empty).
+   - If so, exit the loop.
+4. Check if the remaining sandwich is not wanted by any student (impossible to serve).
+   - If so, exit the loop.
+5. After exiting the loop, return the count of unserved students (students still in line).
+
+## Time Complexity:
+- The time complexity of this function is O(n^2) in the worst case, where 'n' is the number of students. This is because in each iteration, we potentially remove a student from the front of the line and append them to the end, which takes O(n) time, and we repeat this process until one of the stopping conditions is met.
+
+## Space Complexity:
+- The space complexity of this function is O(1), as it does not use any additional data structures that grow with the input size.
