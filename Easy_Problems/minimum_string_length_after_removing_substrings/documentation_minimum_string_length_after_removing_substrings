@@ -1,0 +1,29 @@
+
+# Function: `min_length_after_removal`
+
+## Description:
+This function calculates the minimum length of a string after removing pairs of either 'AB' or 'CD'. It uses a stack data structure to process the input string character by character, and when it encounters a pair of 'AB' or 'CD', it removes them from the stack. The final length of the stack after processing represents the minimum length of the string after such removals.
+
+## Parameters:
+- `s` (str): The input string to be processed.
+
+## Returns:
+- `int`: The minimum length of the string after removing pairs of 'AB' or 'CD'.
+
+## Algorithm:
+1. Initialize an empty stack to hold characters.
+2. Iterate through each character in the input string 's'.
+3. For each character:
+   - Push the current character onto the stack.
+   - Check if there are at least two characters in the stack.
+   - If there are at least two characters:
+     - Check if the last two characters in the stack form either 'AB' or 'CD'.
+     - If they do, pop both characters from the stack.
+4. After processing all characters in the input string, the length of the stack represents the minimum length of the string after removing pairs of 'AB' or 'CD'.
+5. Return the length of the stack as the result.
+
+## Time Complexity:
+- The time complexity of this function is O(n), where 'n' is the length of the input string 's'. This is because we iterate through the string once, and each character operation (pushing or popping from the stack) is constant time.
+
+## Space Complexity:
+- The space complexity of this function is O(n), where 'n' is the length of the input string 's'. This is because, in the worst case, the stack can contain all characters of the input string.
