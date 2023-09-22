@@ -1,0 +1,27 @@
+# Function: `two_sum`
+
+## Description:
+This function finds a pair of numbers in an input list that sums up to a specified target value. It employs a dictionary to keep track of numbers encountered and their indices. When a number is processed, the code calculates the difference between the target and the number. If this difference (complement) exists in the dictionary, it means a matching pair has been found, and their indices are returned as a list. If no such pair is found after iterating through the entire list, the function returns `None`.
+
+## Parameters:
+- `nums` (list of int): A list of integers to search for a pair that sums up to the target.
+- `target` (int): The target sum to find.
+
+## Returns:
+- `list` or `None`: A list containing the indices of the two numbers in 'nums' that sum up to the target. If no such pair is found, the function returns `None`.
+
+## Algorithm:
+1. Create an empty dictionary called 'complement_dict' to store the complements (numbers needed to reach the target) of numbers encountered along with their indices.
+2. Iterate through the input list 'nums' along with their indices using `enumerate`.
+3. For each element 'num' in 'nums':
+   - Calculate the difference ('diff') between the 'target' and 'num'.
+   - Check if 'diff' exists in 'complement_dict'.
+     - If 'diff' is in 'complement_dict', return a list containing the indices of 'num' and the number associated with 'diff'.
+     - If 'diff' is not in 'complement_dict', add 'num' and its index to 'complement_dict'.
+4. If the loop completes without finding a matching pair, return `None`.
+
+## Time Complexity:
+- The time complexity of this function is O(n), where 'n' is the length of the input list 'nums'. This is because the function iterates through 'nums' once, and dictionary operations (checking for key existence and adding key-value pairs) are generally O(1) on average.
+
+## Space Complexity:
+- The space complexity of this function is O(n), where 'n' is the length of the input list 'nums'. This is because in the worst case, all elements of 'nums' are unique, and they are stored in 'complement_dict' along with their indices.
