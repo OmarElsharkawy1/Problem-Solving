@@ -1,0 +1,25 @@
+# Function: `contains_duplicate`
+
+## Description:
+This function determines whether an input list of numbers contains any duplicate elements. It uses a set data structure to keep track of unique numbers encountered in the list. If a duplicate number is found during the iteration, the function returns `True`. Otherwise, it returns `False` after checking the entire list.
+
+## Parameters:
+- `nums` (list): A list of integers to be checked for duplicates.
+
+## Returns:
+- `bool`: `True` if the input list contains duplicate elements, otherwise `False`.
+
+## Algorithm:
+1. Create an empty set called 'num_set' to store unique numbers encountered in the list.
+2. Iterate through the input list 'nums'.
+3. For each element 'num' in 'nums':
+   - Check if 'num' is already in 'num_set'.
+     - If 'num' is in 'num_set', it means a duplicate has been found, so return `True`.
+     - If 'num' is not in 'num_set', add it to 'num_set'.
+4. If the loop completes without finding any duplicates, return `False`.
+
+## Time Complexity:
+- The time complexity of this function is O(n), where 'n' is the length of the input list 'nums'. This is because the function iterates through the entire list once, and set operations (checking for membership and adding elements) are generally O(1) on average.
+
+## Space Complexity:
+- The space complexity of this function is O(n), where 'n' is the length of the input list 'nums'. This is because in the worst case, all elements of 'nums' are unique, and they are stored in the 'num_set'.
