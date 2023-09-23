@@ -1,0 +1,26 @@
+# Function: `is_anagram`
+
+## Description:
+This function determines whether two input strings, 's' and 't', are anagrams of each other. An anagram is a word or phrase formed by rearranging the letters of another. To check for anagrams, the function first verifies whether the lengths of the two input strings are equal. If they have different lengths, they cannot be anagrams, and the function returns `False`. If the lengths are equal, the function proceeds to compare the character counts of each unique character in 's' and 't'. If all characters have the same counts in both strings, the function returns `True`, indicating that 's' and 't' are anagrams.
+
+## Parameters:
+- `s` (str): The first input string to be checked for anagram relationship.
+- `t` (str): The second input string to be checked for anagram relationship.
+
+## Returns:
+- `bool`: `True` if 's' and 't' are anagrams of each other; `False` otherwise.
+
+## Algorithm:
+1. Check if the lengths of 's' and 't' are not equal.
+   - If they are not equal, return `False` (they cannot be anagrams).
+2. Iterate through the unique characters in string 's'.
+3. For each unique character:
+   - Check if the count of that character in 's' is not equal to its count in 't'.
+     - If they are not equal, return `False` (they cannot be anagrams).
+4. If all characters in 's' have the same count in 't', return `True` (they are anagrams).
+
+## Time Complexity:
+- The time complexity of this function is O(n), where 'n' is the length of the longer of the two input strings ('s' or 't'). This is because the function iterates through the characters of both strings once, and counting the characters within the loop also takes linear time.
+
+## Space Complexity:
+- The space complexity of this function is O(k), where 'k' is the number of unique characters in the input strings 's' and 't'. The function uses a set to store the unique characters, and the size of this set is proportional to the number of unique characters in the input strings.
