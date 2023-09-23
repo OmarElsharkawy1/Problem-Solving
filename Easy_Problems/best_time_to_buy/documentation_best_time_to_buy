@@ -1,0 +1,27 @@
+# Function: `max_profit`
+
+## Description:
+This function calculates the maximum profit that can be obtained from a list of stock prices by finding the optimal buying and selling days. It iterates through the list of prices, maintaining two pointers (left and right) that represent the buying and selling days. The function calculates the profit for each potential transaction and updates the maximum profit (maxP) as it iterates through the list. The result is the maximum profit achievable by buying and selling the stock within the given price data.
+
+## Parameters:
+- `prices` (list of int): A list of integers representing the daily stock prices over a period of time.
+
+## Returns:
+- `int`: The maximum profit that can be obtained by buying and selling the stock.
+
+## Algorithm:
+1. Initialize variables for the left pointer (l), right pointer (r), and maximum profit (maxP) to 0.
+2. Iterate through the list 'prices' using the right pointer (r).
+3. For each iteration:
+   - Check if the price at the left pointer (l) is less than the price at the right pointer (r).
+     - If true, calculate the profit by subtracting the price at l from the price at r.
+     - Update the maximum profit (maxP) if the current profit is greater.
+   - If the price at l is greater than or equal to the price at r, move the left pointer (l) to r to consider a new potential buying day.
+   - Move the right pointer (r) to the next day.
+4. After iterating through the entire list, return the maximum profit (maxP) obtained.
+
+## Time Complexity:
+- The time complexity of this function is O(n), where 'n' is the length of the input list 'prices'. This is because the function iterates through 'prices' once, examining each price once.
+
+## Space Complexity:
+- The space complexity of this function is O(1), as it uses a constant amount of additional memory to store variables regardless of the size of the input list.
