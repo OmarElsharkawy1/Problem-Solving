@@ -1,0 +1,25 @@
+# Function: `max_subarray`
+
+## Description:
+This function finds the maximum subarray sum within an input list of integers, 'nums'. The maximum subarray sum is defined as the maximum sum of a contiguous subarray within 'nums'. The function employs the Kadane's algorithm to efficiently compute the maximum subarray sum.
+
+## Parameters:
+- `nums` (list of int): A list of integers representing the elements of the input array.
+
+## Returns:
+- `int`: The maximum subarray sum found within 'nums'.
+
+## Algorithm:
+1. Initialize two variables, 'maxSub' and 'curSum', to keep track of the maximum subarray sum and the current subarray sum, respectively. Initialize 'maxSub' with the first element of 'nums' and 'curSum' with 0.
+2. Iterate through the elements of 'nums'.
+3. For each element 'n':
+   - Check if the current subarray sum ('curSum') is negative. If it is, reset 'curSum' to 0 (start a new subarray).
+   - Add the current element 'n' to 'curSum'.
+   - Update 'maxSub' by taking the maximum of 'maxSub' and 'curSum' to keep track of the maximum subarray sum encountered so far.
+4. After iterating through the entire list, return 'maxSub' as the maximum subarray sum found.
+
+## Time Complexity:
+- The time complexity of this function is O(n), where 'n' is the length of the input list 'nums'. This is because the function iterates through 'nums' once.
+
+## Space Complexity:
+- The space complexity of this function is O(1) as it uses a constant amount of additional memory to store variables regardless of the size of the input list.
