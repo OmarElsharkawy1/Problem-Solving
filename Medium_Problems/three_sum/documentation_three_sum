@@ -1,0 +1,26 @@
+# Function: `three_sum`
+
+## Description:
+This function finds all unique triplets in an input list of integers, 'nums', that sum to zero. It uses the two-pointer approach and takes advantage of the sorted nature of the input list to efficiently find these triplets. The function avoids duplicate triplets and returns them in a sorted order.
+
+## Parameters:
+- `nums` (list of int): A list of integers representing the input array.
+
+## Returns:
+- `list of list of int`: A list of lists containing unique triplets of integers that sum to zero.
+
+## Algorithm:
+1. Initialize an empty list 'res' to store unique triplets that sum to zero.
+2. Sort the input list 'nums' in ascending order.
+3. Iterate through 'nums' using enumeration, skipping duplicate values to avoid duplicate triplets.
+4. Initialize left (l) and right (r) pointers and explore the two-pointer approach to find triplets.
+5. If the sum of the triplet is greater than zero, move the right pointer (r) leftward.
+6. If the sum of the triplet is less than zero, move the left pointer (l) rightward.
+7. If the sum of the triplet is zero, append it to 'res' and update pointers, skipping duplicate values.
+8. After processing all elements in 'nums', return the list 'res' containing unique triplets that sum to zero.
+
+## Time Complexity:
+- The time complexity of this function is O(n^2), where 'n' is the length of the input list 'nums'. This is because the function performs a two-pointer search for each element in 'nums', and sorting 'nums' takes O(n * log(n)) time.
+
+## Space Complexity:
+- The space complexity of this function is O(1) as it uses a constant amount of additional memory to store variables and the 'res' list. The 'res' list does not count toward space complexity because it is part of the function's output.
