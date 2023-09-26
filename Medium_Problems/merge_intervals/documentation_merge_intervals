@@ -1,0 +1,25 @@
+# Function: `merge`
+
+## Description:
+This function takes a list of intervals and merges overlapping intervals to form a list of non-overlapping intervals. It sorts the input intervals based on their start values and then iterates through the sorted list to merge overlapping intervals. The merged intervals are returned as a list of non-overlapping intervals.
+
+## Parameters:
+- `intervals` (list of list of int): A list of intervals, where each interval is represented as a list containing two integers: the start and end values of the interval.
+
+## Returns:
+- `list of list of int`: A list of non-overlapping intervals formed by merging the input intervals.
+
+## Algorithm:
+1. Initialize an empty list 'output' to store the merged intervals.
+2. Sort the input intervals based on their start values in ascending order using the `sorted` function with a custom key function.
+3. Iterate through the sorted intervals, denoted as 'i'.
+4. Check if 'output' is not empty and the start value of the current interval 'i' is less than or equal to the end value of the last interval in 'output'.
+   - If there is an overlap, merge the overlapping intervals by updating the end value of the last interval in 'output' to the maximum of its current end value and the end value of 'i'.
+5. If there is no overlap, add the current interval 'i' to 'output'.
+6. After processing all intervals, return 'output' containing the merged non-overlapping intervals.
+
+## Time Complexity:
+- The time complexity of this function is O(n * log(n)), where 'n' is the number of intervals. This is because the function sorts the input intervals based on their start values, which takes O(n * log(n)) time.
+
+## Space Complexity:
+- The space complexity of this function is O(n), where 'n' is the number of intervals. This is because the function creates a new list 'output' to store the merged intervals, and in the worst case, 'output' may contain all 'n' intervals.
