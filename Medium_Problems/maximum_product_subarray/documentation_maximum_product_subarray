@@ -1,0 +1,31 @@
+
+# Function: `max_product`
+
+## Description:
+This function calculates the maximum product of a subarray within an input list of integers, 'nums'. It employs a dynamic programming approach to efficiently compute the maximum product. The function maintains three variables: '_max' (maximum product found so far), 'cur_max' (current maximum product ending at the current position), and 'cur_min' (current minimum product ending at the current position).
+
+## Parameters:
+- `nums` (list of int): A list of integers representing the input array.
+
+## Returns:
+- `int`: The maximum product of a subarray within 'nums'.
+
+## Algorithm:
+1. Check if the input list 'nums' is empty. If it is, return 0, as there are no elements to calculate the product from.
+2. Initialize three variables: '_max', 'cur_max', and 'cur_min' with the first element of 'nums'.
+3. Iterate through 'nums' starting from the second element:
+   - Store the current maximum value in 'tmp' for use in updating 'cur_min'.
+   - Update 'cur_max' by taking the maximum of 'num', 'num * cur_max', and 'num * cur_min'.
+   - Update 'cur_min' by taking the minimum of 'num', 'num * tmp', and 'num * cur_min'.
+   - Update the overall maximum product '_max' by taking the maximum of '_max' and 'cur_max'.
+4. After processing all elements in 'nums', '_max' contains the maximum product calculated.
+
+## Time Complexity:
+- The time complexity of this function is O(n), where 'n' is the length of the input list 'nums'. This is because the function iterates through 'nums' once.
+
+## Space Complexity:
+- The space complexity of this function is O(1) as it uses a constant amount of additional memory to store variables regardless of the size of the input list.
+
+---
+
+This documentation provides an overview of the code's purpose, its parameters and return value, an explanation of the algorithm used in the code, and the time and space complexity analysis.
