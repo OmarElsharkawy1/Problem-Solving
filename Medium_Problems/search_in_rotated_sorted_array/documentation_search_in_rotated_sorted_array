@@ -1,0 +1,33 @@
+# Function: `search`
+
+## Description:
+This function performs a binary search to find the index of a target value within a rotated sorted array. The input 'nums' represents an array that has been rotated, and the function efficiently searches for the 'target' value using a modified binary search algorithm.
+
+## Parameters:
+- `nums` (list of int): A rotated sorted array of integers.
+- `target` (int): The target value to search for within the rotated array.
+
+## Returns:
+- `int`: The index of the 'target' value in 'nums'. If 'target' is not found, the function returns -1.
+
+## Algorithm:
+1. Initialize left (l) and right (r) pointers to the beginning and end of 'nums', respectively.
+2. Perform binary search while 'l' is less than or equal to 'r'.
+3. Calculate the middle index 'mid'.
+4. Check if the 'target' value is equal to the middle element at index 'mid'.
+   - If they are equal, return 'mid' as the index of the 'target'.
+5. Check if the left subarray (from 'l' to 'mid') is sorted.
+   - If sorted:
+     - If the 'target' is greater than the middle element or less than the leftmost element, narrow the search to the right subarray.
+     - Otherwise, narrow the search to the left subarray.
+6. If the left subarray is not sorted, it means the right subarray is sorted.
+   - If the 'target' is less than the middle element or greater than the rightmost element, narrow the search to the left subarray.
+   - Otherwise, narrow the search to the right subarray.
+7. Repeat steps 3-6 until 'l' is greater than 'r'.
+8. If the 'target' is not found, return -1.
+
+## Time Complexity:
+- The time complexity of this function is O(log(n)), where 'n' is the length of the input list 'nums'. This is because the function uses a binary search algorithm to search for the 'target'.
+
+## Space Complexity:
+- The space complexity of this function is O(1) as it uses a constant amount of additional memory to store variables regardless of the size of the input list.
